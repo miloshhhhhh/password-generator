@@ -14,10 +14,9 @@ def password_generator(length):
     return password
 
 
-
-
 # try to open file if exists and find match if exist skip password generation
 def read_from_file(for_what):
+    
     try:
         with open('password.txt', 'r') as f:
             for i in f:
@@ -36,7 +35,6 @@ def save_to_file(password,pass_for):
         print('Password saved to file')
 
 
-
 def main():
 
     if len(sys.argv) == 2:
@@ -46,7 +44,6 @@ def main():
         password = password_generator(length)
         read_from_file(for_what) # break if it already exists
         save_to_file(password,for_what)
-        # read_from_file()
     
     else:
         print('Usage: python3 Password_Generator.py <length>')
